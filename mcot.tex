@@ -5,26 +5,50 @@
 \begin{document}
 	\maketitle
 	
-	\section{Motivation}	
+	\section{Motivation}
 	
-	Je m'intéresse depuis quelques temps à l'intéligence artificielle, et notamment au Deep Lerning avec les réseaux de neuronnes artificielles. J'ai également développé dans ma première année de CPGE une appétence pour la physique, j'ai donc voulu combiner les deux dans ce projet de TIPE
-	
+Responsable de la moitié des AVC mortels, les ruptures d'anévrismes sont aujourd'hui un sujet important de santé publique. Des décisions doivent être prise en urgence, l'utilisation de réseaux de neurone permet alors d'obtenir de très bon résultat rapidement, en opposition aux très couteux outils de simulations numériques classiques.
+
 	\section{Ancrage}
+	
+	Les réseaux de neurone artificiels permettent de prédire, à partir d'un cycle d'entrainement sur des données existantes, de nouvelles données. Ces réseaux jouent ici un double rôle: Modéliser à l'aide de Réseaux de Neurones Informés par la Physique le comportement du flux sanguin. Puis à partir de ces résultats classifier le risque de rupture.
 
 	\section{Positionement thématique et mots clés}
 	
-	\section{Bibliographie commentée}	
+\begin{itemize}
+	\item Mécanique des fluides (Équations de Navier Stokes)
+	\item Intelligence Artificielle (Réseaux de neurones)
+	\item Simulation Informatique
+	\item Mécanique des matériaux (élasticité)
+\end{itemize}
+	
+	\section{Bibliographie commentée}
+	
+Un anévrisme cérébrale est une déformation de la paroi d'une artère intracrânienne, créant ainsi une poche de sang et engendrant une modification du flux sanguin, et donc des contraintes imposés sur les parois [3]. Le risque est la rupture de cet anévrisme, provoquant une hémorragie cérébrale. 
+
+Le sujet à déjà été étudié par de multiples équipe de recherche, notamment par le CEMEF, rattaché aux Mines de Paris [2]. La particularité de leur projet est, au dela de la recherche, de son application dans des hôpitaux Européen pour la prise de décision dans des cas de prise en charche en urgence de ruptures d'anévrismes cérébrales.
+
+Les équations de Navier Stokes permettent de modéliser l'écoulement du sang dans le cerveau. Cependant leurs résolutions exactes restent encore inconnue. La méthodes des PINN (Physic Informed Neural Network) permettent d'avoir des très bons résultats en guidant l'apprentissage du réseau par les conditions aux limites et les équations aux dérivés partielle [1]. Cette méthode permet de palier aux simulations numériques classique d'écoulement de fluide, très coûteuses en temps et puissance de calcul.
 	
 	\section{Problématique}	
 	
+Comment modéliser et prévoir les risques de rupture d'anévrisme ?
+	
 	\section{Objectifs}
+	
+L'objectif est de créer une modèle simple de l'écoulement sanguin dans un anévrisme pour ensuite observer les contraintes misent en ouvres. A partir de résultats de physique des matériaux, il est ensuite possible de caractériser la rupture des parois, provoquant l'hémorragie, à l'aide de physique des matériaux.
+
+Une fois la modélisation et le modèle de résolution mis en place, il est alors aisé d'obtenir des résultats sur différentes formes d'anévrisme, et d'obtenir des résultats en fonction de la géométrie pour ainsi classifier le risque de rupture. 
 	
 	\section{Références bibliographiques}
 	
 	\begin{thebibliography}{2} % 100 is a random guess of the total number of
 
-	\bibitem[1]{Maziar Raissi1, Paris Perdikaris2, George Em Karniadakis1} Physics Informed Deep Learning (Part I): Data-driven
-Solutions of Nonlinear Partial Differential Equations \emph{https://arxiv.org/pdf/1711.10561}
-
+	\bibitem{} Maziar Raissil, Paris Perdikaris, George Em Karniadakis1, ``Physics Informed Deep Learning (Part I): Data-driven Solutions of Nonlinear Partial Differential Equations" \emph{https://arxiv.org/pdf/1711.10561}
+	\bibitem{} Mines Paris, Digital twins: a technological revolution for customized treatment \emph{https://www.minesparis.psl.eu/en/blog/actualites/digital-twins-a-technological-revolution-for-customized-treatment/}
+	\bibitem{} Jolan Raviol, Vers l’évaluation du risque de rupture des anévrismes
+intracrâniens: caractérisation mécanique in vivo de la
+paroi artérielle, \emph{https://theses.hal.science/tel-04603572v1/file/TH_2024ECDL0011.pdf}
+	
 \end{thebibliography}
 \end{document}
