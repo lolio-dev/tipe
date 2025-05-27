@@ -1,17 +1,22 @@
 \documentclass{article}
+\setlength{\parskip}{1em}
+\usepackage{indentfirst}
+\usepackage{babel}      
 \usepackage[a4paper, total={6in, 8in}]{geometry}
-\title{MCOT - Entrainer des réseaux de neuronnes à la résolution d'équation aux dérivés partielles: application à la prevention de rupture d'anévirsme cérébrale}
+\title{MCOT - Entrainer des réseaux de neuronnes à la résolution d'équation aux dérivés partielles: application à la prévention de rupture d'anévirsme cérébrale}
 
 \begin{document}
 	\maketitle
 	
 	\section{Motivation}
 	
-Responsable de la moitié des AVC mortels, les ruptures d'anévrismes sont aujourd'hui un sujet important de santé publique. Des décisions doivent être prise en urgence, l'utilisation de réseaux de neurone permet alors d'obtenir de très bon résultat rapidement, en opposition aux très couteux outils de simulations numériques classiques.
-
-	\section{Ancrage}
+Résponsable de la moitié des AVC mortels, les ruptures d'anévrismes sont aujourd'hui un sujet important de santé publique. 
+Des données sont alors nécessaire, souvent en urgence pour le chirchugien, telles que les riques de rupture et les impacts qu'auront sur le temps différents traitements.
+\section{Ancrage}
 	
-	Les réseaux de neurone artificiels permettent de prédire, à partir d'un cycle d'entrainement sur des données existantes, de nouvelles données. Ces réseaux jouent ici un double rôle: Modéliser à l'aide de Réseaux de Neurones Informés par la Physique le comportement du flux sanguin. Puis à partir de ces résultats classifier le risque de rupture.
+Les réseaux de neurone artificiels permettent de prédire, à partir d'un cycle d'entrainement sur des données existantes, de nouvelles données. 
+En particulier, les \emph{Physics Informed Neural Network} permettent d'avoir de très bons resultats dans la résolution d'équations différentielles aux dérivés partielles. 
+C'est nottamment une très bonne solution pour les équation de Navier-Stokes, modélisant l'écoulement d'un fluide.
 
 	\section{Positionement thématique et mots clés}
 	
@@ -26,29 +31,37 @@ Responsable de la moitié des AVC mortels, les ruptures d'anévrismes sont aujou
 	
 Un anévrisme cérébrale est une déformation de la paroi d'une artère intracrânienne, créant ainsi une poche de sang et engendrant une modification du flux sanguin, et donc des contraintes imposés sur les parois [3]. Le risque est la rupture de cet anévrisme, provoquant une hémorragie cérébrale. 
 
-Le sujet à déjà été étudié par de multiples équipe de recherche, notamment par le CEMEF, rattaché aux Mines de Paris [2]. La particularité de leur projet est, au dela de la recherche, de son application dans des hôpitaux Européen pour la prise de décision dans des cas de prise en charche en urgence de ruptures d'anévrismes cérébrales.
 
-Les équations de Navier Stokes permettent de modéliser l'écoulement du sang dans le cerveau. Cependant leurs résolutions exactes restent encore inconnue. La méthodes des PINN (Physic Informed Neural Network) permettent d'avoir des très bons résultats en guidant l'apprentissage du réseau par les conditions aux limites et les équations aux dérivés partielle [1]. Cette méthode permet de palier aux simulations numériques classique d'écoulement de fluide, très coûteuses en temps et puissance de calcul.
-	
+L'un des principal traitement est de poser un \emph{stent} à la base de l'anévrisme, sorte de maillage modifiant le comportement du fluide. Son dimensionement est alors une question primordiale pour le chirchugien.
+
+Le sujet à déjà été étudié par de multiples équipes de recherche, notamment par le CEMEF, rattaché aux Mines de Paris [2]. La particularité de leur projet est, au dela de la recherche, de son application dans des hôpitaux Européen pour la prise de décision dans des cas de prise en charche en urgence de ruptures d'anévrismes cérébrales.
+
+Les équations de Navier Stokes sont les équations choisies pour notre modèle. Consituant un des problème du millénaires, on ne connait pas les solutions exactes. Des méthodes  de résolution numérique existe mais sont extremement coûteuses à la fois en temps et en calcul.
+Notre méthode présentée ici permet de palier à ces solutions. 
+La prise en charge des patients atteints d'anévrisme se faisant souvent en urgence, les données doivent être obtenuent dans un laps de temps très court, Les question d'optimisation sont alors importantes [4]. 
+
+Technologie recente, les PINN \emph{Physics Informed Neural Networks} permettent alors de réduire le temps de calcul en se basant sur des réseaux de neurones pour résoudre les équations de navier stokes. L'un des avantages de l'utilisation de réseaux de neuronne est égallement de pouvoir dans un second temps utiliser les résultats des patients précédents à la fois pour accélérer le calcul et améliorer la précision du résultat. Le réseau finit par "comprendre" l'impact de certains paramètres sur les résultats.
+
 	\section{Problématique}	
 	
-Comment modéliser et prévoir les risques de rupture d'anévrisme ?
+Comment optimiser la prévention et la prise en charge des ruptures d'anévrisme à l'aide de l'intelligence artificielle ?
 	
 	\section{Objectifs}
-	
-L'objectif est de créer une modèle simple de l'écoulement sanguin dans un anévrisme pour ensuite observer les contraintes misent en ouvres. A partir de résultats de physique des matériaux, il est ensuite possible de caractériser la rupture des parois, provoquant l'hémorragie, à l'aide de physique des matériaux.
 
-Une fois la modélisation et le modèle de résolution mis en place, il est alors aisé d'obtenir des résultats sur différentes formes d'anévrisme, et d'obtenir des résultats en fonction de la géométrie pour ainsi classifier le risque de rupture. 
-	
+L'objectif est d'abord de modéliser comment le sang se comporte dans une arthère cérabrale à l'aide de réseaux de neuronne et des équations de navier stokes.
+fren
+Des questions d'optimisation se pose alors autour des réseaux: Quelle architecture ? Quelle fonction d'activation ? Et plus égallement toutes les questions se posant autour des réseaux de neuronnes classiques. Il est égallement possible de comparer nos résultats avec les résultats d'autres outils, tels que \emph{SOLIDWORKS Flow Simulation}.
+
+Une fois le diagnostic de l'anévrisme obtenu, il est possible de regarder comment certaines solutions tels que les \emph{stents} modifie le comportement du sang sur le long terme et ainsi de dimensioner ces solutions.
+
 	\section{Références bibliographiques}
 	
 	\begin{thebibliography}{2} % 100 is a random guess of the total number of
 
 	\bibitem{} Maziar Raissil, Paris Perdikaris, George Em Karniadakis1, ``Physics Informed Deep Learning (Part I): Data-driven Solutions of Nonlinear Partial Differential Equations" \emph{https://arxiv.org/pdf/1711.10561}
 	\bibitem{} Mines Paris, Digital twins: a technological revolution for customized treatment \emph{https://www.minesparis.psl.eu/en/blog/actualites/digital-twins-a-technological-revolution-for-customized-treatment/}
-	\bibitem{} Jolan Raviol, Vers l’évaluation du risque de rupture des anévrismes
-intracrâniens: caractérisation mécanique in vivo de la
-paroi artérielle, \emph{https://theses.hal.science/tel-04603572v1/file/TH_2024ECDL0011.pdf}
-	
+	\bibitem{} Jolan Raviol, Vers l’évaluation du risque de rupture des anévrismes intracrâniens: caractérisation mécanique in vivo de la paroi artérielle \emph{https://theses.hal.science/tel-04603572v1/document}
+	\bibitem{} Modeling of 3D Blood Flows with Physics-Informed Neural
+Networks: Comparison of Network Architectures \emph{file:///Users/eliepernet/Downloads/fluids-08-00046-v2.pdf}
 \end{thebibliography}
 \end{document}
